@@ -31,7 +31,7 @@ module.exports = function(app) {
     [authJwt.verifyToken, authJwt.isParticipante],
     controller.participanteBoard
   );
-
+/*
   app.get(
     "/api/test/juez",
     [authJwt.verifyToken, authJwt.isJuez],
@@ -42,5 +42,5 @@ module.exports = function(app) {
     "/api/test/organizadorglobal",
     [authJwt.verifyToken, authJwt.isOrganizadorGlobal],
     controller.adminBoard
-  );
+  );*/
 };
