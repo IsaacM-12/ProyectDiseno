@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../_services/user.service';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-board-participante',
@@ -7,27 +7,29 @@ import { UserService } from '../_services/user.service';
   styleUrls: ['./board-participante.component.css']
 })
 export class BoardParticipanteComponent implements OnInit {
-  content?: string;
+  form: any = {
+    url: null
+  };
+  isSuccessful = false;
+  errorMessage = '';
 
-  constructor(private userService: UserService) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.userService.getParticipanteBoard().subscribe({
+  }
+
+  onSubmit(): void {
+    const { url } = this.form;
+
+    this.authService.uploadLink(url).subscribe({
       next: data => {
-        this.content = data;
+        console.log(data);
+        this.isSuccessful = true;
       },
       error: err => {
-        if (err.error) {
-          try {
-            const res = JSON.parse(err.error);
-            this.content = res.message;
-          } catch {
-            this.content = `Error with status: ${err.status} - ${err.statusText}`;
-          }
-        } else {
-          this.content = `Error with status: ${err.status}`;
-        }
+        this.errorMessage = err.error.message;
       }
     });
-  }
+      
+}
 }

@@ -37,6 +37,16 @@ export class AuthService {
     );
   }
 
+  uploadLink(url: string): Observable<any> {
+    return this.http.post(
+      AUTH_API + 'upload',
+      {
+        url,
+      },
+      httpOptions
+    );
+  }
+
   logout(): Observable<any> {
     return this.http.post(AUTH_API + 'signout', { }, httpOptions);
   }
