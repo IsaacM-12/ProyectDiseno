@@ -1,6 +1,28 @@
-<div class="container">
-    <header class="jumbotron">
-      <p>{{ content }}</p>
-    </header>
-  </div>
-  
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ingrese el enlace del video</title>
+  </head>
+  <body>
+    <h2>Ingrese el enlace del video</h2>
+    
+    <form
+    *ngIf="!isSuccessful"
+    name="form"
+    (ngSubmit)="f.form.valid && onSubmit()"
+    #f="ngForm"
+    novalidate
+  >
+      <label for="enlace">Enlace:</label>
+      <input type="url"
+      class="form-control"
+      name="url"
+      [(ngModel)]="form.url"
+      required
+      minlength="6"
+      #url="ngModel">
+      <br><br>
+      <button class="btn btn-primary btn-block">Upload</button>
+    </form>
+  </body>
+</html>
