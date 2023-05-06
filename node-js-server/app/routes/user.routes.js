@@ -36,11 +36,11 @@ module.exports = function(app) {
     "/api/test/juez",
     [authJwt.verifyToken, authJwt.isJuez],
     controller.adminBoard
-  );
+  );*/
 
   app.get(
     "/api/test/organizadorglobal",
     [authJwt.verifyToken, authJwt.isOrganizadorGlobal],
-    controller.adminBoard
-  );*/
+    controller.organizadorGlobalBoard
+  );
 };

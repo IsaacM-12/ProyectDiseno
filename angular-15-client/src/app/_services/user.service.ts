@@ -29,4 +29,9 @@ export class UserService {
   getParticipanteBoard(): Observable<any> {
     return this.http.get(API_URL + 'participante', { responseType: 'text' });
   }
+
+  getOrganizadorGlobalBoard(): Observable<any> {
+    return this.http.get(API_URL + 'organizadorglobal', { responseType: 'text' });
+  }
+
 }
