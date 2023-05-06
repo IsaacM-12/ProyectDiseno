@@ -31,12 +31,12 @@ module.exports = function(app) {
     [authJwt.verifyToken, authJwt.isParticipante],
     controller.participanteBoard
   );
-/*
+
   app.get(
     "/api/test/juez",
     [authJwt.verifyToken, authJwt.isJuez],
-    controller.adminBoard
-  );*/
+    controller.juezBoard
+  );
 
   app.get(
     "/api/test/organizadorglobal",

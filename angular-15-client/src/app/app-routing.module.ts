@@ -10,6 +10,7 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardParticipanteComponent } from './board-participante/board-participante.component';
 import { BoardOrganizadorGlobalComponent } from './board-organizadorglobal/board-organizadorglobal.component';
+import { BoardJuezComponent } from './board-juez/board-juez.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'admin', component: BoardAdminComponent },
   { path: 'participante', component: BoardParticipanteComponent },
   { path: 'organizadorglobal', component: BoardOrganizadorGlobalComponent },
+  { path: 'juez', component: BoardJuezComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
