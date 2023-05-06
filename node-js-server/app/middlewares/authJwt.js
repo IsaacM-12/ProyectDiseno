@@ -82,9 +82,106 @@ isModerator = (req, res, next) => {
   });
 };
 
+isParticipante = (req, res, next) => {
+  User.findById(req.userId).exec((err, user) => {
+    if (err) {
+      res.status(500).send({ message: err });
+      return;
+    }
+
+    Role.find(
+      {
+        _id: { $in: user.roles },
+      },
+      (err, roles) => {
+        if (err) {
+          res.status(500).send({ message: err });
+          return;
+        }
+
+        for (let i = 0; i < roles.length; i++) {
+          if (roles[i].name === "participante") {
+            next();
+            return;
+          }
+        }
+
+        res.status(403).send({ message: "Require Participante Role!" });
+        return;
+      }
+    );
+  });
+};
+
+isJuez = (req, res, next) => {
+  User.findById(req.userId).exec((err, user) => {
+    if (err) {
+      res.status(500).send({ message: err });
+      return;
+    }
+
+    Role.find(
+      {
+        _id: { $in: user.roles },
+      },
+      (err, roles) => {
+        if (err) {
+          res.status(500).send({ message: err });
+          return;
+        }
+
+        for (let i = 0; i < roles.length; i++) {
+          if (roles[i].name === "juez") {
+            next();
+            return;
+          }
+        }
+
+        res.status(403).send({ message: "Require Juez Role!" });
+        return;
+      }
+    );
+  });
+};
+
+isOrganizadorGlobal = (req, res, next) => {
+  User.findById(req.userId).exec((err, user) => {
+    if (err) {
+      res.status(500).send({ message: err });
+      return;
+    }
+
+    Role.find(
+      {
+        _id: { $in: user.roles },
+      },
+      (err, roles) => {
+        if (err) {
+          res.status(500).send({ message: err });
+          return;
+        }
+
+        for (let i = 0; i < roles.length; i++) {
+          if (roles[i].name === "organizadorGlobal") {
+            next();
+            return;
+          }
+        }
+
+        res.status(403).send({ message: "Require Organizador Global Role!" });
+        return;
+      }
+    );
+  });
+};
+
+
 const authJwt = {
   verifyToken,
   isAdmin,
   isModerator,
+  isParticipante,
+  isJuez,
+  isOrganizadorGlobal
 };
 module.exports = authJwt;
