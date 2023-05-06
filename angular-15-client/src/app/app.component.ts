@@ -14,6 +14,9 @@ export class AppComponent {
   isLoggedIn = false;
   showAdminBoard = false;
   showModeratorBoard = false;
+  showParticipanteBoard = false;
+  showOrganizadorGlobalBoard = false;
+  showJuezBoard = false;
   username?: string;
 
   eventBusSub?: Subscription;
@@ -33,6 +36,9 @@ export class AppComponent {
 
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
       this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+      this.showParticipanteBoard = this.roles.includes('ROLE_PARTICIPANTE');
+      this.showOrganizadorGlobalBoard = this.roles.includes('ROLE_ORGANIZADORGLOBAL');
+      this.showJuezBoard = this.roles.includes('ROLE_JUEZ');
 
       this.username = user.username;
     }

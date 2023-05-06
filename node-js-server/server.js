@@ -14,7 +14,11 @@ app.use(function(req, res, next) {
   next();
 });
 
+<<<<<<< HEAD
 // 😀 pablo sabe
+=======
+// 😀 karim the dream
+>>>>>>> bc264adedd35d17bffca9c90cec1791c3ae294f5
 var corsOptions = {
   origin: ["http://127.0.0.1:8081"],
   credentials: true
@@ -30,7 +34,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cookieSession({
-    name: "bezkoder-session",
+    name: "GameJam-session",
     secret: "COOKIE_SECRET", // should use as secret environment variable
     httpOnly: true
   })
@@ -55,7 +59,7 @@ db.mongoose
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  res.json({ message: "Welcome to GameJam application." });
 });
 
 // routes
@@ -100,6 +104,37 @@ function initial() {
 
         console.log("added 'admin' to roles collection");
       });
+
+      new Role({
+        name: "participante"
+      }).save(err => {
+        if (err) {
+          console.log("error", err);
+        }
+
+        console.log("added 'participante' to roles collection");
+      });
+
+      new Role({
+        name: "juez"
+      }).save(err => {
+        if (err) {
+          console.log("error", err);
+        }
+
+        console.log("added 'juez' to roles collection");
+      });
+
+      new Role({
+        name: "organizadorGlobal"
+      }).save(err => {
+        if (err) {
+          console.log("error", err);
+        }
+
+        console.log("added 'organizadorGlobal' to roles collection");
+      });
+
     }
   });
 }
