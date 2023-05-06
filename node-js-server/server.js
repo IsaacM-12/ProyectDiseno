@@ -6,6 +6,15 @@ const dbConfig = require("./app/config/db.config");
 
 const app = express();
 
+
+app.use(function(req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:8081");
+  res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  next();
+});
+
+
 var corsOptions = {
   origin: ["http://127.0.0.1:8081"],
   credentials: true
