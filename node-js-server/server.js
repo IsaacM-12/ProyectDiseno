@@ -14,11 +14,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-<<<<<<< HEAD
 // 😀 pablo sabe
-=======
-// 😀 karim the dream
->>>>>>> bc264adedd35d17bffca9c90cec1791c3ae294f5
 var corsOptions = {
   origin: ["http://127.0.0.1:8081"],
   credentials: true
