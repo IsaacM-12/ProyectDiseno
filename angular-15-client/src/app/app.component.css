@@ -1,0 +1,9 @@
+.fondo{
+    width: 100%;
+    background-color: aqua;
+    min-height: 100vh;
+}
+
+.navbar{
+    height: 5vh;
+}

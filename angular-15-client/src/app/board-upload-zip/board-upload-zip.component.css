@@ -1,0 +1,31 @@
+body {
+  background: rgb(75, 153, 242);
+  background: linear-gradient(
+    178deg,
+    rgba(75, 153, 242, 1) 16%,
+    rgba(14, 68, 158, 1) 89%
+  );
+  min-width: 100vh;
+  min-height: 95vh;
+  margin: 0;
+  border: 0;
+  padding: 5vh;
+  padding-left: 15vh;
+  padding-right: 15vh;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  color: white;
+}
+
+input {
+  background-color: transparent;
+  color: white;
+  max-width: 40vh;
+}
+
+.btn {
+  max-width: 20vh;
+}

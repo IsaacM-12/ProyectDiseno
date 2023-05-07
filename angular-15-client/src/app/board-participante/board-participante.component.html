@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ingrese el enlace del video</title>
+    <title>Link video</title>
   </head>
   <body>
-    <h2>Ingrese el enlace del video</h2>
+      <h2>Ingrese el enlace del video</h2>
 
-    <form
-      *ngIf="!isSuccessful"
-      name="form"
-      (ngSubmit)="f.form.valid && onSubmit()"
-      #f="ngForm"
-      novalidate
-    >
-      <label for="enlace">Enlace:</label>
-      <input
-        type="text"
-        class="form-control"
-        name="url"
-        [(ngModel)]="form.url"
-        required
-        minlength="6"
-        #url="ngModel"
-      />
-      <br /><br />
-      <button class="btn btn-primary btn-block">Upload</button>
-    </form>
-    <div class="alert alert-success" *ngIf="isSuccessful">
-      Upload successful!
-    </div>
+      <form
+        *ngIf="!isSuccessful"
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit()"
+        #f="ngForm"
+        novalidate
+      >
+        <label for="enlace">Enlace:</label>
+        <input
+          type="text"
+          class="form-control"
+          name="url"
+          [(ngModel)]="form.url"
+          required
+          minlength="6"
+          #url="ngModel"
+        />
+        <br /><br />
+        <button class="btn btn-primary btn-block" width:10px>Upload</button>
+      </form>
+      <div class="alert alert-success" *ngIf="isSuccessful">
+        Upload successful!
+      </div>
   </body>
 </html>
