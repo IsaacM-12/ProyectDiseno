@@ -13,18 +13,31 @@
       #f="ngForm"
       novalidate
     >
+      <label for="team">Nombre del equipo:</label>
+      <input
+        type="text"
+        class="form-control"
+        name="team"
+        [(ngModel)]="form.team"
+        required
+        minlength="3"
+      />
+      <br />
       <label for="zip">Zip:</label>
       <input
         type="file"
+        accept=".zip"
         class="form-control"
         name="zip"
         [(ngModel)]="form.url"
         required
-        minlength="6"
-        #url="ngModel"
       />
       <br /><br />
       <button class="btn btn-primary btn-block">Upload</button>
     </form>
+
+    <div class="alert alert-success" *ngIf="isSuccessful">
+      Upload successful!
+    </div>
   </body>
 </html>

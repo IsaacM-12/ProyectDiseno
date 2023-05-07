@@ -22,6 +22,7 @@ export class BoardUploadZipComponent implements OnInit {
   onSubmit(): void {
     const { url } = this.form;
     const { team } = this.form;
+    console.log(team);
 
     this.authService.uploadGameZip(team, url).subscribe({
       next: data => {

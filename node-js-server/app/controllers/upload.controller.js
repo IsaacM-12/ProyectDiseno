@@ -21,7 +21,7 @@ exports.uploadLink = (req, res) => {
 
 exports.uploadGameZip = (req, res) => {
   const gameZip = new GameZip({
-    url: req.body.team,
+    team: req.body.team,
     url: req.body.url,
   });
 
