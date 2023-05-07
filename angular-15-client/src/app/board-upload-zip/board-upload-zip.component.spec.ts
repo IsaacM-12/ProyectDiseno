@@ -8,9 +8,8 @@ describe('BoardUploadZipComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoardUploadZipComponent ]
-    })
-    .compileComponents();
+      declarations: [BoardUploadZipComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BoardUploadZipComponent);
     component = fixture.componentInstance;

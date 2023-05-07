@@ -4,20 +4,19 @@ import { AuthService } from '../_services/auth.service';
 @Component({
   selector: 'app-board-upload-zip',
   templateUrl: './board-upload-zip.component.html',
-  styleUrls: ['./board-upload-zip.component.css']
+  styleUrls: ['./board-upload-zip.component.css'],
 })
 export class BoardUploadZipComponent implements OnInit {
   form: any = {
     team: null,
-    url: null
+    url: null,
   };
   isSuccessful = false;
   errorMessage = '';
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onSubmit(): void {
     const { url } = this.form;
@@ -25,14 +24,13 @@ export class BoardUploadZipComponent implements OnInit {
     console.log(team);
 
     this.authService.uploadGameZip(team, url).subscribe({
-      next: data => {
+      next: (data) => {
         console.log(data);
         this.isSuccessful = true;
       },
-      error: err => {
+      error: (err) => {
         this.errorMessage = err.error.message;
-      }
+      },
     });
-      
-}
+  }
 }

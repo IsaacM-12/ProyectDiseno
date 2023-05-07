@@ -4,19 +4,19 @@ import { UserService } from '../_services/user.service';
 @Component({
   selector: 'app-board-juez',
   templateUrl: './board-juez.component.html',
-  styleUrls: ['./board-juez.component.css']
+  styleUrls: ['./board-juez.component.css'],
 })
 export class BoardJuezComponent implements OnInit {
   content?: string;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
     this.userService.getJuezBoard().subscribe({
-      next: data => {
+      next: (data) => {
         this.content = data;
       },
-      error: err => {
+      error: (err) => {
         if (err.error) {
           try {
             const res = JSON.parse(err.error);
@@ -27,7 +27,7 @@ export class BoardJuezComponent implements OnInit {
         } else {
           this.content = `Error with status: ${err.status}`;
         }
-      }
+      },
     });
   }
 }

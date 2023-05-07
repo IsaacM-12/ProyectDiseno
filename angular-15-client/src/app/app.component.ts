@@ -7,7 +7,7 @@ import { EventBusService } from './_shared/event-bus.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   private roles: string[] = [];
@@ -35,7 +35,9 @@ export class AppComponent {
       this.roles = user.roles;
 
       this.showParticipanteBoard = this.roles.includes('ROLE_PARTICIPANTE');
-      this.showOrganizadorGlobalBoard = this.roles.includes('ROLE_ORGANIZADORGLOBAL');
+      this.showOrganizadorGlobalBoard = this.roles.includes(
+        'ROLE_ORGANIZADORGLOBAL'
+      );
       this.showJuezBoard = this.roles.includes('ROLE_JUEZ');
 
       this.username = user.username;
@@ -48,15 +50,15 @@ export class AppComponent {
 
   logout(): void {
     this.authService.logout().subscribe({
-      next: res => {
+      next: (res) => {
         console.log(res);
         this.storageService.clean();
 
         window.location.reload();
       },
-      error: err => {
+      error: (err) => {
         console.log(err);
-      }
+      },
     });
   }
 }

@@ -19,11 +19,11 @@ const routes: Routes = [
   { path: 'uploadFile', component: BoardUploadZipComponent },
   { path: 'organizadorglobal', component: BoardOrganizadorGlobalComponent },
   { path: 'juez', component: BoardJuezComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

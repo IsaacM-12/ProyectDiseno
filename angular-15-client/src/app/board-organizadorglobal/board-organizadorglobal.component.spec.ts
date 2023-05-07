@@ -8,9 +8,8 @@ describe('BoardOrganizadorglobalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoardOrganizadorglobalComponent ]
-    })
-    .compileComponents();
+      declarations: [BoardOrganizadorglobalComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BoardOrganizadorglobalComponent);
     component = fixture.componentInstance;

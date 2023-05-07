@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 const AUTH_API = 'http://localhost:8080/api/auth/';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
 
 @Injectable({
@@ -59,6 +59,6 @@ export class AuthService {
   }
 
   logout(): Observable<any> {
-    return this.http.post(AUTH_API + 'signout', { }, httpOptions);
+    return this.http.post(AUTH_API + 'signout', {}, httpOptions);
   }
 }

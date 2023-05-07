@@ -4,19 +4,19 @@ import { UserService } from '../_services/user.service';
 @Component({
   selector: 'app-board-organizadorglobal',
   templateUrl: './board-organizadorglobal.component.html',
-  styleUrls: ['./board-organizadorglobal.component.css']
+  styleUrls: ['./board-organizadorglobal.component.css'],
 })
 export class BoardOrganizadorGlobalComponent implements OnInit {
   content?: string;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
     this.userService.getOrganizadorGlobalBoard().subscribe({
-      next: data => {
+      next: (data) => {
         this.content = data;
       },
-      error: err => {
+      error: (err) => {
         if (err.error) {
           try {
             const res = JSON.parse(err.error);
@@ -27,7 +27,7 @@ export class BoardOrganizadorGlobalComponent implements OnInit {
         } else {
           this.content = `Error with status: ${err.status}`;
         }
-      }
+      },
     });
   }
 }
