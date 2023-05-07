@@ -29,3 +29,8 @@ input {
 .btn {
   max-width: 20vh;
 }
+
+.form-control-file{
+  border: 1px solid white;
+  padding: 5px;
+}
