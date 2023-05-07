@@ -24,5 +24,7 @@ module.exports = function(app) {
 
   app.post("/api/auth/signout", controller.signout);
 
-  app.post("/api/auth/upload", controllerUpload.upload);
+  app.post("/api/auth/uploadLink", controllerUpload.uploadLink);
+
+  app.post("/api/auth/uploadGameZip", controllerUpload.uploadGameZip);
 };

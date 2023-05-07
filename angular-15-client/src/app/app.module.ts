@@ -17,6 +17,7 @@ import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { BoardParticipanteComponent } from './board-participante/board-participante.component';
 import { BoardJuezComponent } from './board-juez/board-juez.component';
 import { BoardOrganizadorGlobalComponent } from './board-organizadorglobal/board-organizadorglobal.component';
+import { BoardUploadZipComponent } from './board-upload-zip/board-upload-zip.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BoardOrganizadorGlobalComponent } from './board-organizadorglobal/board
     BoardUserComponent,
     BoardParticipanteComponent,
     BoardJuezComponent,
-    BoardOrganizadorGlobalComponent
+    BoardOrganizadorGlobalComponent,
+    BoardUploadZipComponent
   ],
   imports: [
     BrowserModule,

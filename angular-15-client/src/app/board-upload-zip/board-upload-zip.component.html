@@ -4,7 +4,7 @@
     <title>Ingrese el enlace del video</title>
   </head>
   <body>
-    <h2>Ingrese el enlace del video</h2>
+    <h2>Ingrese el archivo del juego</h2>
 
     <form
       *ngIf="!isSuccessful"
@@ -13,11 +13,11 @@
       #f="ngForm"
       novalidate
     >
-      <label for="enlace">Enlace:</label>
+      <label for="zip">Zip:</label>
       <input
-        type="text"
+        type="file"
         class="form-control"
-        name="url"
+        name="zip"
         [(ngModel)]="form.url"
         required
         minlength="6"
