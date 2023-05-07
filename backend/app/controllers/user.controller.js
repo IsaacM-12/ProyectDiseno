@@ -6,14 +6,6 @@ exports.userBoard = (req, res) => {
   res.status(200).send("User Content.");
 };
 
-exports.adminBoard = (req, res) => {
-  res.status(200).send("Vini jr o rei do futbol.");
-};
-
-exports.moderatorBoard = (req, res) => {
-  res.status(200).send("Moderator Content.");
-};
-
 exports.participanteBoard = (req, res) => {
   res.status(200).send("Participante Content.");
 };
