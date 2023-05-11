@@ -20,7 +20,9 @@
           name="url"
           [(ngModel)]="form.url"
           required
-          minlength="6"
+          minlength="10"
+          maxlength="100"
+          pattern="^[0-9a-zA-Z@#$%&*.!?]+$"
           #url="ngModel"
         />
         <br /><br />

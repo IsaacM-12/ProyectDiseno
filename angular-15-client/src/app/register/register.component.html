@@ -20,6 +20,7 @@
             type="text"
             class="form-control"
             name="username"
+            pattern="^[0-9a-zA-Z]+$"
             [(ngModel)]="form.username"
             required
             minlength="3"
@@ -43,6 +44,8 @@
             type="email"
             class="form-control"
             name="email"
+            minlength="7"
+            maxlength="50"
             [(ngModel)]="form.email"
             required
             email
@@ -62,12 +65,15 @@
             type="password"
             class="form-control"
             name="password"
+            pattern="^[0-9a-zA-Z@#$%&*.!?]+$"
             [(ngModel)]="form.password"
             required
             minlength="6"
+            maxlength="20"
             #password="ngModel"
             [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
           />
+
           <div class="invalid-feedback" *ngIf="password.errors && f.submitted">
             <div *ngIf="password.errors['required']">Password is required</div>
             <div *ngIf="password.errors['minlength']">
