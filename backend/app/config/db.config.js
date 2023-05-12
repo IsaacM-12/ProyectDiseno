@@ -1,5 +1,5 @@
 module.exports = {
-  HOST: "138.2.230.69",
+  HOST: "localhost",
   PORT: 27017,
   DB: "gameJam"
 };
