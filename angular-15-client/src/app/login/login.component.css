@@ -10,12 +10,13 @@ input {
 }
 
 .fondo {
-  background: rgb(149, 156, 164);
+  /* background: rgb(75, 153, 242);
   background: linear-gradient(
     178deg,
     rgba(75, 153, 242, 1) 16%,
     rgba(14, 68, 158, 1) 89%
-  );
+  ); */
+  background-color: aqua;
   min-width: 100vh;
   min-height: 95vh;
   margin: 0;
