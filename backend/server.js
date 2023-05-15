@@ -8,7 +8,7 @@ const app = express();
 
 
 app.use(function (req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "http://201.199.89.35:8081");
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:8081");
   res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
   next();
