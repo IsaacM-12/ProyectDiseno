@@ -15,7 +15,7 @@ app.use(function (req, res, next) {
 });
 
 var corsOptions = {
-  origin: ["http://201.199.89.35:8081"],
+  origin: ["http://127.0.0.1:8081"],
   credentials: true
 }
 
