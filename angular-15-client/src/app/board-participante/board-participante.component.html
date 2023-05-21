@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Link video</title>
-  </head>
-  <body>
+<div class="fondo">
+  <a>ㅤ</a>
+  <div class="col-md-12">
+    <div class="card card-container">
       <h2>Ingrese el enlace del video</h2>
 
       <form
@@ -13,23 +11,38 @@
         #f="ngForm"
         novalidate
       >
-        <label for="enlace">Enlace:</label>
-        <input
-          type="text"
-          class="form-control"
-          name="url"
-          [(ngModel)]="form.url"
-          required
-          minlength="10"
-          maxlength="100"
-          pattern="^[0-9a-zA-Z@#$%&*.!?]+$"
-          #url="ngModel"
-        />
-        <br /><br />
+        <div class="form-group">
+          <label for="enlace">Enlace:</label>
+          <input
+            type="url"
+            class="form-control"
+            name="url"
+            [(ngModel)]="form.url"
+            required
+            minlength="10"
+            maxlength="100"
+            pattern="^(http|https)[0-9a-zA-Z@#$%&*.!?]*\.com$"
+            #enlace="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && enlace.errors }"
+          />
+          <div *ngIf="enlace.errors && f.submitted" class="invalid-feedback">
+            <div *ngIf="enlace.errors['required']">Team name is required</div>
+            <div *ngIf="enlace.errors['maxlength']">
+              Team name must be less than 100 characters
+            </div>
+            <div *ngIf="enlace.errors['minlength']">
+              Team name must be longer than 10 characters
+            </div>
+            <div *ngIf="enlace.errors['pattern']">
+              Link must start with 'http' or 'https' and end with '.com'
+            </div>
+          </div>
+        </div>
         <button class="btn btn-primary btn-block" width:10px>Upload</button>
       </form>
       <div class="alert alert-success" *ngIf="isSuccessful">
         Upload successful!
       </div>
-  </body>
-</html>
+    </div>
+  </div>
+</div>

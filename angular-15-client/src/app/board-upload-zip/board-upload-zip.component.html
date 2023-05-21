@@ -1,45 +1,62 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Ingrese el enlace del video</title>
-  </head>
-  <body>
-    <h2>Ingrese el archivo del juego</h2>
+<div class="fondo">
+  <a>ㅤ</a>
+  <div class="col-md-12">
+    <div class="card card-container">
+      <h2>Ingrese el archivo del juego</h2>
 
-    <form
-      *ngIf="!isSuccessful"
-      name="form"
-      (ngSubmit)="f.form.valid && onSubmit()"
-      #f="ngForm"
-      novalidate
-    >
-      <label for="team">Nombre del equipo:</label>
-      <input
-        type="text"
-        class="form-control"
-        name="team"
-        [(ngModel)]="form.team"
-        required
-        minlength="3"
-        maxlength="20"
-        pattern="^[0-9a-zA-Z@#$%&*.!?]+$"
-      />
-      <br />
-      <label for="zip">Zip:</label>
-      <input
-        type="file"
-        accept=".zip"
-        class="form-control-file"
-        name="zip"
-        [(ngModel)]="form.url"
-        required
-      />
-      <br /><br />
-      <button class="btn btn-primary btn-block">Upload</button>
-    </form>
+      <form
+        *ngIf="!isSuccessful"
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit()"
+        #f="ngForm"
+        novalidate
+      >
+        <div class="form-group">
+          <label for="team">Nombre del equipo:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="team"
+            [(ngModel)]="form.team"
+            required
+            minlength="3"
+            maxlength="20"
+            #team="ngModel"
+            pattern="^[0-9a-zA-Z@#$%&*.!?]+$"
+            [ngClass]="{ 'is-invalid': f.submitted && team.errors }"
+          />
+          <div *ngIf="team.errors && f.submitted" class="invalid-feedback">
+            <div *ngIf="team.errors['required']">Team name is required</div>
+            <div *ngIf="team.errors['pattern']">
+              Only alphanumerics and @ # $ % & * . ! ? no space
+            </div>
+            <div *ngIf="team.errors['maxlength']">
+              Team name must be less than 20 characters
+            </div>
+            <div *ngIf="team.errors['minlength']">
+              Team name must be longer than 3 characters
+            </div>
+          </div>
+        </div>
 
-    <div class="alert alert-success" *ngIf="isSuccessful">
-      Upload successful!
+        <div class="form-group">
+          <label for="zip">Zip:</label>
+          <input
+            type="file"
+            accept=".zip"
+            class="form-control-file"
+            name="zip"
+            [(ngModel)]="form.url"
+            required
+          />
+        </div>
+
+        <button class="btn btn-primary btn-block">Upload</button>
+      </form>
+
+      <div class="alert alert-success" *ngIf="isSuccessful">
+        Upload successful!
+      </div>
     </div>
-  </body>
-</html>
+  </div>
+</div>
