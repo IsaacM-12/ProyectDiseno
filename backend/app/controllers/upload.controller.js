@@ -1,5 +1,6 @@
 const config = require("../config/auth.config");
 const db = require("../models");
+const Team = require("../models/team.model");
 const Video = db.video;
 const GameZip = db.gameZip;
 
@@ -26,6 +27,21 @@ exports.uploadGameZip = (req, res) => {
   });
 
   gameZip.save((err, game) => {
+    if (err) {
+      res.status(500).send({ message: err });
+      return;
+    }
+    res.send({ message: "successfully!" });
+  });
+};
+
+
+exports.createTeam = (req, res) => {
+  const team = new Team({
+    name: req.body.team
+  });
+
+  team.save((err, game) => {
     if (err) {
       res.status(500).send({ message: err });
       return;

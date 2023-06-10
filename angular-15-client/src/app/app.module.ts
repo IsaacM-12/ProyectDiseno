@@ -15,6 +15,7 @@ import { BoardParticipanteComponent } from './board-participante/board-participa
 import { BoardJuezComponent } from './board-juez/board-juez.component';
 import { BoardOrganizadorGlobalComponent } from './board-organizadorglobal/board-organizadorglobal.component';
 import { BoardUploadZipComponent } from './board-upload-zip/board-upload-zip.component';
+import { BoardTeamsComponent } from './board-teams/board-teams.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BoardUploadZipComponent } from './board-upload-zip/board-upload-zip.com
     BoardParticipanteComponent,
     BoardJuezComponent,
     BoardOrganizadorGlobalComponent,
-    BoardUploadZipComponent
+    BoardUploadZipComponent,
+    BoardTeamsComponent
   ],
   imports: [
     BrowserModule,

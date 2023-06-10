@@ -27,4 +27,6 @@ module.exports = function (app) {
   app.post("/api/auth/uploadLink", controllerUpload.uploadLink);
 
   app.post("/api/auth/uploadGameZip", controllerUpload.uploadGameZip);
+
+  app.post("/api/auth/createTeam", controllerUpload.createTeam);
 };

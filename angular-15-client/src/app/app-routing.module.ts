@@ -9,6 +9,7 @@ import { BoardParticipanteComponent } from './board-participante/board-participa
 import { BoardOrganizadorGlobalComponent } from './board-organizadorglobal/board-organizadorglobal.component';
 import { BoardJuezComponent } from './board-juez/board-juez.component';
 import { BoardUploadZipComponent } from './board-upload-zip/board-upload-zip.component';
+import { BoardTeamsComponent } from './board-teams/board-teams.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -19,6 +20,9 @@ const routes: Routes = [
   { path: 'uploadFile', component: BoardUploadZipComponent },
   { path: 'organizadorglobal', component: BoardOrganizadorGlobalComponent },
   { path: 'juez', component: BoardJuezComponent },
+
+  { path: 'teams', component: BoardTeamsComponent },
+
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 

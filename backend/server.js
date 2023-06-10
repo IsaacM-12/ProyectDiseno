@@ -1,58 +1,26 @@
 const express = require("express");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
-const path = require("path");
-const http = require("http");
 
 const dbConfig = require("./app/config/db.config");
 
 const app = express();
 
 
-
-//app.use("/", express.static('build'));
-app.use(express.static('build')); // All client-side files are stored in build folder
-
-app.get('/', (req, res) => {
-  res.sendFile('index.html', {root:'build'});
+app.use(function(req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:8081");
+  res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  next();
 });
 
-// Let Angular handle all help-* routes
-app.get('/login', (req, res) => {
-  res.sendFile('index.html', {root:'build'});
-});
+// 😀 karim the dream
+var corsOptions = {
+  origin: ["http://127.0.0.1:8081"],
+  credentials: true
+}
 
-app.get('/register', (req, res) => {
-  res.sendFile('index.html', {root:'build'});
-});
-
-app.get('/profile', (req, res) => {
-  res.sendFile('index.html', {root:'build'});
-});
-
-app.get('/participante', (req, res) => {
-  res.sendFile('index.html', {root:'build'});
-});
-
-app.get('/uploadFile', (req, res) => {
-  res.sendFile('index.html', {root:'build'});
-});
-
-app.get('/organizadorglobal', (req, res) => {
-  res.sendFile('index.html', {root:'build'});
-});
-
-app.get('/juez', (req, res) => {
-  res.sendFile('index.html', {root:'build'});
-});
-
-app.get('/home', (req, res) => {
-  res.sendFile('index.html', {root:'build'});
-});
-
-//app.get('/*', (req, res) => res.sendFile(path.join(__dirname)));
-
-const server = http.createServer(app);
+app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
 app.use(express.json());
@@ -86,9 +54,9 @@ db.mongoose
   });
 
 // simple route
-/*app.get("/", (req, res) => {
+app.get("/", (req, res) => {
   res.json({ message: "Welcome to GameJam application." });
-});*/
+});
 
 // routes
 require("./app/routes/auth.routes")(app);
@@ -111,6 +79,26 @@ function initial() {
         }
 
         console.log("added 'user' to roles collection");
+      });
+
+      new Role({
+        name: "moderator"
+      }).save(err => {
+        if (err) {
+          console.log("error", err);
+        }
+
+        console.log("added 'moderator' to roles collection");
+      });
+
+      new Role({
+        name: "admin"
+      }).save(err => {
+        if (err) {
+          console.log("error", err);
+        }
+
+        console.log("added 'admin' to roles collection");
       });
 
       new Role({

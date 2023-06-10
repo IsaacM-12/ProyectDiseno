@@ -9,6 +9,7 @@ db.user = require("./user.model");
 db.role = require("./role.model");
 db.video = require("./video.model");
 db.gameZip = require("./gameZip.model");
+db.team = require("./team.model");
 
 db.ROLES = ["user", "participante", "juez", "organizadorGlobal"];
 
