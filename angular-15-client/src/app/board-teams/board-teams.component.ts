@@ -12,10 +12,16 @@ export class BoardTeamsComponent {
   };
   isSuccessful = false;
   errorMessage = '';
+  currentUser: any; // teams
+
 
   constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log("init");
+    //this.currentUser = this.authService.viewTeams();
+
+  }
 
   onSubmit(): void {
     const { team } = this.form;
