@@ -32,6 +32,8 @@ module.exports = function (app) {
 
   app.post("/api/auth/createTeam", controllerUpload.createTeam);
 
+  app.post("/api/auth/solicitarSerOrganizador", controllerUpload.solicitarSerOrganizador);
+
   app.get("/api/auth/viewTeams", controllerGet.getTeams );
 
   app.put("/api/auth/changeUserTeam", controllerUpdate.updateParticipantTeam );

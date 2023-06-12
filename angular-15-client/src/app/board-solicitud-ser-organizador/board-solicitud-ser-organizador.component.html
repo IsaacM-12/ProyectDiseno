@@ -1,0 +1,37 @@
+<div class="fondo">
+    <a>ㅤ</a>
+    <div class="col-md-12">
+      <div class="card card-container">
+        <h2>Solicitud para ser organizador local</h2>
+  
+        <form
+          *ngIf="!isSuccessful"
+          name="form"
+          (ngSubmit)="f.form.valid && onSubmit()"
+          #f="ngForm"
+          novalidate
+        >
+          <div class="form-group">
+            <label for="enlace">Nombre:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="name"
+              [(ngModel)]="form.name"
+              required
+              #name="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && name.errors }"
+            />
+            <div *ngIf="name.errors && f.submitted" class="invalid-feedback">
+              <div *ngIf="name.errors['required']">Name is required</div>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-block">Enviar Solicitud</button>
+        </form>
+        <div class="alert alert-success" *ngIf="isSuccessful">
+          Solicitud exitosa!
+        </div>
+      </div>
+    </div>
+  </div>
+  

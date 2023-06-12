@@ -3,6 +3,7 @@ const db = require("../models");
 const Team = require("../models/team.model");
 const Video = db.video;
 const GameZip = db.gameZip;
+const SolicitudSerOrganizador = db.solicitudSerOrganizador;
 
 exports.uploadLink = (req, res) => {
 
@@ -43,6 +44,20 @@ exports.createTeam = (req, res) => {
   });
 
   team.save((err, game) => {
+    if (err) {
+      res.status(500).send({ message: err });
+      return;
+    }
+    res.send({ message: "successfully!" });
+  });
+};
+
+exports.solicitarSerOrganizador = (req, res) => {
+  const solicitudSerOrganizador = new SolicitudSerOrganizador({
+    name: req.body.name
+  });
+
+  solicitudSerOrganizador.save((err, game) => {
     if (err) {
       res.status(500).send({ message: err });
       return;

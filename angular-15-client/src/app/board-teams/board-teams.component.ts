@@ -3,7 +3,6 @@ import { AuthService } from '../_services/auth.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AUTH_API } from '../_services/auth.service';
 import { StorageService } from '../_services/storage.service';
-import { Observable } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -22,6 +21,7 @@ export class BoardTeamsComponent {
   errorMessage = '';
   nombresEquipos: any;
   currentUser: any;
+  joinTeam = false;
 
   constructor(
     private authService: AuthService,
@@ -59,7 +59,7 @@ export class BoardTeamsComponent {
       )
       .subscribe(
         (data) => {
-          console.log('API call successful');
+          this.joinTeam = true;
         },
         (error) => {
           console.log('API call error');

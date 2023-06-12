@@ -10,6 +10,7 @@ import { BoardOrganizadorGlobalComponent } from './board-organizadorglobal/board
 import { BoardJuezComponent } from './board-juez/board-juez.component';
 import { BoardUploadZipComponent } from './board-upload-zip/board-upload-zip.component';
 import { BoardTeamsComponent } from './board-teams/board-teams.component';
+import { BoardSolicitudSerOrganizadorComponent } from './board-solicitud-ser-organizador/board-solicitud-ser-organizador.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'juez', component: BoardJuezComponent },
 
   { path: 'teams', component: BoardTeamsComponent },
+  { path: 'solicitudSerOrganizador', component: BoardSolicitudSerOrganizadorComponent },
 
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
