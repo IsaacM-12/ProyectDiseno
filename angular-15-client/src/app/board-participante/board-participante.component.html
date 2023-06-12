@@ -21,7 +21,7 @@
             required
             minlength="10"
             maxlength="100"
-            pattern="^(http|https)[0-9a-zA-Z@#:$%&*/.!?]*\.com$"
+            pattern="^(http|https)[0-9a-zA-Z@#:$%&*/.!?]*$"
             #enlace="ngModel"
             [ngClass]="{ 'is-invalid': f.submitted && enlace.errors }"
           />
@@ -34,7 +34,7 @@
               Team name must be longer than 10 characters
             </div>
             <div *ngIf="enlace.errors['pattern']">
-              Link must start with 'http' or 'https' and end with '.com'
+              Link must start with 'http' or 'https'
             </div>
           </div>
         </div>
