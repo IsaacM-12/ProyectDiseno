@@ -3,7 +3,10 @@ const mongoose = require("mongoose");
 const SolicitudSerOrganizador = mongoose.model(
   "SolicitudSerOrganizador",
   new mongoose.Schema({
-    name: String
+    name: String,
+    email: String,
+    place: String,
+    description: String,
   })
 );
 

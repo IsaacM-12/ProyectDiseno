@@ -54,7 +54,10 @@ exports.createTeam = (req, res) => {
 
 exports.solicitarSerOrganizador = (req, res) => {
   const solicitudSerOrganizador = new SolicitudSerOrganizador({
-    name: req.body.name
+    name: req.body.name,
+    email: req.body.email,
+    place: req.body.place,
+    description: req.body.description
   });
 
   solicitudSerOrganizador.save((err, game) => {

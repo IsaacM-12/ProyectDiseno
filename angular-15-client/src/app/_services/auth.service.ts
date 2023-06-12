@@ -72,11 +72,14 @@ export class AuthService {
     );
   }
 
-  solicitarSerOrganizador(name: String): Observable<any> {
+  solicitarSerOrganizador(name: String, email: String, place: String, description: String): Observable<any> {
     return this.http.post(
       AUTH_API + 'solicitarSerOrganizador',
       {
         name,
+        email,
+        place,
+        description
       },
       httpOptions
     );

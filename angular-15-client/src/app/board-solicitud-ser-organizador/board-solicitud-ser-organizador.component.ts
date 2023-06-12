@@ -28,8 +28,11 @@ export class BoardSolicitudSerOrganizadorComponent {
 
   onSubmit(): void {
     const { name } = this.form;
+    const { email } = this.form;
+    const { place } = this.form;
+    const { description } = this.form;
 
-    this.authService.solicitarSerOrganizador(name).subscribe({
+    this.authService.solicitarSerOrganizador(name, email, place, description).subscribe({
       next: (data) => {
         this.isSuccessful = true;
       },
