@@ -15,7 +15,7 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   // -------------------------------
-  // post 
+  // post
   // ------------------------------
 
   login(username: string, password: string): Observable<any> {
@@ -41,11 +41,12 @@ export class AuthService {
     );
   }
 
-  uploadLink(url: string): Observable<any> {
+  uploadLink(url: string, team: String): Observable<any> {
     return this.http.post(
       AUTH_API + 'uploadLink',
       {
         url,
+        team,
       },
       httpOptions
     );
@@ -72,21 +73,25 @@ export class AuthService {
     );
   }
 
-  solicitarSerOrganizador(name: String, email: String, place: String, description: String): Observable<any> {
+  solicitarSerOrganizador(
+    name: String,
+    email: String,
+    place: String,
+    description: String
+  ): Observable<any> {
     return this.http.post(
       AUTH_API + 'solicitarSerOrganizador',
       {
         name,
         email,
         place,
-        description
+        description,
       },
       httpOptions
     );
   }
-  
+
   logout(): Observable<any> {
     return this.http.post(AUTH_API + 'signout', {}, httpOptions);
   }
-
 }

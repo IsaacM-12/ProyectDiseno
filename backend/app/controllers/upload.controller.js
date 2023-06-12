@@ -9,6 +9,7 @@ exports.uploadLink = (req, res) => {
 
   const video = new Video({
     url: req.body.url,
+    team: req.body.team
   });
 
   video.save((err, video) => {
