@@ -13,7 +13,7 @@ export class BoardParticipanteComponent implements OnInit {
   };
   isSuccessful = false;
   errorMessage = '';
-  currentUser: any;
+  teamName: any;
 
 
   constructor(
@@ -25,9 +25,9 @@ export class BoardParticipanteComponent implements OnInit {
 
   onSubmit(): void {
     const { url } = this.form;
-    this.currentUser = this.storageService.getUser().team;
+    this.teamName = this.storageService.getUser().team;
 
-    this.authService.uploadLink(url, this.currentUser).subscribe({
+    this.authService.uploadLink(url, this.teamName).subscribe({
       next: (data) => {
         this.isSuccessful = true;
       },

@@ -21,7 +21,7 @@
             required
             minlength="10"
             maxlength="100"
-            pattern="^(http|https)[0-9a-zA-Z@#$%&*.!?]*\.com$"
+            pattern="^(http|https)[0-9a-zA-Z@#:$%&*/.!?]*\.com$"
             #enlace="ngModel"
             [ngClass]="{ 'is-invalid': f.submitted && enlace.errors }"
           />

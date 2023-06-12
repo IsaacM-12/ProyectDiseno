@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
+import { StorageService } from '../_services/storage.service';
 
 @Component({
   selector: 'app-board-upload-zip',
@@ -8,22 +9,24 @@ import { AuthService } from '../_services/auth.service';
 })
 export class BoardUploadZipComponent implements OnInit {
   form: any = {
-    team: null,
     url: null,
   };
   isSuccessful = false;
   errorMessage = '';
+  teamName: any;
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private storageService: StorageService
+  ) {}
 
   ngOnInit(): void {}
 
   onSubmit(): void {
     const { url } = this.form;
-    const { team } = this.form;
-    console.log(team);
+    this.teamName = this.storageService.getUser().team;
 
-    this.authService.uploadGameZip(team, url).subscribe({
+    this.authService.uploadGameZip(this.teamName, url).subscribe({
       next: (data) => {
         console.log(data);
         this.isSuccessful = true;
