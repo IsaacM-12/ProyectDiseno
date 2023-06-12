@@ -48,17 +48,17 @@
     </div>
   </div>
 
-  <div class="m-5">
+  <div class="m-5 d-flex justify-content-center align-items-center">
     <div *ngIf="!joinTeam">
       <h2>Equipos disponibles</h2>
       <ul class="list-group">
         <li
-          class="list-group-item list-group-item-info"
+          class="list-group-item"
           *ngFor="let equipo of nombresEquipos"
         >
           {{ equipo }}
           <button class="btn btn-primary" (click)="onSelectTeam(equipo)">
-            +
+            unirse
           </button>
         </li>
       </ul>
