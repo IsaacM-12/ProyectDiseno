@@ -13,6 +13,8 @@ export class BoardUploadZipComponent implements OnInit {
   };
   isSuccessful = false;
   errorMessage = '';
+  
+  //el equipo del usuario
   teamName: any;
 
   constructor(
