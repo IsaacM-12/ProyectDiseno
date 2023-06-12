@@ -5,6 +5,10 @@ const User = mongoose.model(
   new mongoose.Schema({
     username: String,
     email: String,
+    team: {
+      type: String,
+      default: "Seleccione un equipo"
+    },
     password: String,
     roles: [
       {

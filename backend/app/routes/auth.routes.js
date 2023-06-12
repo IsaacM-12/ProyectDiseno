@@ -2,6 +2,7 @@ const { verifySignUp } = require("../middlewares");
 const controller = require("../controllers/auth.controller");
 const controllerUpload = require("../controllers/upload.controller");
 const controllerGet = require("../controllers/get.controller");
+const controllerUpdate = require("../controllers/update.controller");
 
 module.exports = function (app) {
   app.use(function (req, res, next) {
@@ -32,4 +33,6 @@ module.exports = function (app) {
   app.post("/api/auth/createTeam", controllerUpload.createTeam);
 
   app.get("/api/auth/viewTeams", controllerGet.getTeams );
+
+  app.put("/api/auth/changeUserTeam", controllerUpdate.updateParticipantTeam );
 };

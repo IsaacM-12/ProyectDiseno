@@ -50,5 +50,16 @@
 
   <div class="m-5">
     <h2>Equipos disponibles</h2>
+    <ul class="list-group">
+      <li
+        class="list-group-item list-group-item-info"
+        *ngFor="let equipo of nombresEquipos"
+      >
+        {{ equipo }}
+        <button class="btn btn-primary" (click)="onSelectTeam(equipo)">
+          +
+        </button>
+      </li>
+    </ul>
   </div>
 </div>
