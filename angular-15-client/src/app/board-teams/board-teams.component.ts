@@ -46,7 +46,6 @@ export class BoardTeamsComponent {
 
   onSelectTeam(equipo: string): void {
     this.currentUser = this.storageService.getUser().id;
-    console.log(this.currentUser);
     const id: string = this.currentUser;
   
     this.http
@@ -61,7 +60,6 @@ export class BoardTeamsComponent {
       .subscribe(
         (data) => {
           console.log('API call successful');
-          console.log(data);
         },
         (error) => {
           console.log('API call error');
