@@ -1,6 +1,22 @@
 # Gamejam Proyecto Diseño
 ### Isaac Melendez - Pablo Sandí - Axel solano
 
+### Se utiliza mean
+mongo
+
+express
+
+angular
+
+node
+
+### corre en http://138.2.231.71:8080/home
+
+
+-------------------------------------------------------------------------------------------
+
+
+## Con unos cambios puede correr en http://localhost:8081 de la siguiente forma
 
 ### Primero en la ruta del backend y luego en la del frontend el comando:
 ```
@@ -16,6 +32,3 @@ ng serve --port 8081
 ```
 node server.js
 ```
-
-
-### corre en el puerto http://localhost:8081
