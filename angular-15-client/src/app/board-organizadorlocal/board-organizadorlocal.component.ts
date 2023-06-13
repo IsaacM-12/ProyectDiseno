@@ -4,8 +4,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AUTH_API } from '../_services/auth.service';
 import { StorageService } from '../_services/storage.service';
 
-
-
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
@@ -24,7 +22,7 @@ export class BoardOrganizadorLocalComponent {
   nombresJuegos: any;
   currentUser: any;
   accepted = false;
-
+  state = false;
 
   constructor(
     private authService: AuthService,
@@ -48,12 +46,13 @@ export class BoardOrganizadorLocalComponent {
   }
 
   onSelectStateAceptar(name: string): void {
+    this.state = true;
     this.http
       .put(
         AUTH_API + 'changeGameState',
         {
           name,
-          state: "Aceptar", 
+          state: 'Aceptar',
         },
         httpOptions
       )
@@ -69,12 +68,13 @@ export class BoardOrganizadorLocalComponent {
   }
 
   onSelectStateRechazar(name: string): void {
+    this.state = true;
     this.http
       .put(
         AUTH_API + 'changeGameState',
         {
           name,
-          state: "Rechazar", 
+          state: 'Rechazar',
         },
         httpOptions
       )
@@ -88,6 +88,4 @@ export class BoardOrganizadorLocalComponent {
         }
       );
   }
-  
-  
 }

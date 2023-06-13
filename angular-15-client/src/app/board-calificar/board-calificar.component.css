@@ -1,55 +1,77 @@
 label {
-    display: block;
-    margin-top: 10px;
-    color: white;
-  }
-  
-  h2 {
-    color: aliceblue;
-  }
-  
-  input {
-    background-color: transparent;
-    color: white;
-  }
-  
-  .fondo {
-    background: rgb(75, 153, 242);
-    background: linear-gradient(
-      178deg,
-      rgba(75, 153, 242, 1) 16%,
-      rgba(14, 68, 158, 1) 89%
-    );
-    min-width: 100vh;
-    min-height: 95vh;
-    margin: 0;
-    border: 0;
-    padding: 0;
-  }
-  
-  .card-container.card {
-    max-width: 80vh;
-    padding: 40px 40px;
-  }
-  
-  .card {
-    background-color: #343a40;
-    padding: 20px 25px 30px;
-    margin: 0 auto 25px;
-    margin-top: 50px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
-    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  }
-  
-  .spaced-btn {
-    margin-right: 10px; /* Ajusta el valor según tus necesidades */
-  }
+  display: block;
+  margin-top: 10px;
+  color: white;
+}
 
-  .stars {
-    background-color: #e4e728;
-    margin-right: 10px;
-  }
+h2 {
+  color: aliceblue;
+}
+
+input {
+  background-color: transparent;
+  color: white;
+}
+
+.fondo {
+  background: rgb(75, 153, 242);
+  background: linear-gradient(
+    178deg,
+    rgba(75, 153, 242, 1) 16%,
+    rgba(14, 68, 158, 1) 89%
+  );
+  min-width: 100vh;
+  min-height: 95vh;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.card-container.card {
+  max-width: 80vh;
+  padding: 40px 40px;
+}
+
+.card {
+  background-color: #343a40;
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  margin-top: 50px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.spaced-btn {
+  margin-right: 10px; /* Ajusta el valor según tus necesidades */
+}
+
+.stars {
+  background-color: transparent;
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid white;
+}
+.list-group-item {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  max-width: 1000px;
+  min-width: 700px;
+  border: 1px solid gray;
+}
+
+.center {
+  text-align: center;
+}
+
+.comment-input {
+  background-color: transparent;
+  color: white;
+}
+.comment-input::placeholder {
+  color: white;
+}
