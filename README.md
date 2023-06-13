@@ -13,7 +13,10 @@ node
 ### corre en http://138.2.231.71:8080/home
 
 
-Con unos cambios puede correr en http://localhost:8081
+-------------------------------------------------------------------------------------------
+
+
+## Con unos cambios puede correr en http://localhost:8081 de la siguiente forma
 
 ### Primero en la ruta del backend y luego en la del frontend el comando:
 ```
