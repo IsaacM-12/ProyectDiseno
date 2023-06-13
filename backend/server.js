@@ -8,49 +8,69 @@ const dbConfig = require("./app/config/db.config");
 
 const app = express();
 
-
-
-//app.use("/", express.static('build'));
 app.use(express.static('build')); // All client-side files are stored in build folder
 
 app.get('/', (req, res) => {
-  res.sendFile('index.html', {root:'build'});
+  res.sendFile('index.html', { root: 'build' });
 });
 
 // Let Angular handle all help-* routes
 app.get('/login', (req, res) => {
-  res.sendFile('index.html', {root:'build'});
+  res.sendFile('index.html', { root: 'build' });
 });
 
 app.get('/register', (req, res) => {
-  res.sendFile('index.html', {root:'build'});
+  res.sendFile('index.html', { root: 'build' });
 });
 
 app.get('/profile', (req, res) => {
-  res.sendFile('index.html', {root:'build'});
+  res.sendFile('index.html', { root: 'build' });
 });
 
 app.get('/participante', (req, res) => {
-  res.sendFile('index.html', {root:'build'});
+  res.sendFile('index.html', { root: 'build' });
 });
 
 app.get('/uploadFile', (req, res) => {
-  res.sendFile('index.html', {root:'build'});
+  res.sendFile('index.html', { root: 'build' });
 });
 
 app.get('/organizadorglobal', (req, res) => {
-  res.sendFile('index.html', {root:'build'});
+  res.sendFile('index.html', { root: 'build' });
 });
 
 app.get('/juez', (req, res) => {
-  res.sendFile('index.html', {root:'build'});
+  res.sendFile('index.html', { root: 'build' });
 });
 
 app.get('/home', (req, res) => {
-  res.sendFile('index.html', {root:'build'});
+  res.sendFile('index.html', { root: 'build' });
 });
 
-//app.get('/*', (req, res) => res.sendFile(path.join(__dirname)));
+app.get('/organizadorlocal', (req, res) => {
+  res.sendFile('index.html', { root: 'build' });
+});
+
+app.get('/teams', (req, res) => {
+  res.sendFile('index.html', { root: 'build' });
+});
+
+app.get('/solicitudSerOrganizador', (req, res) => {
+  res.sendFile('index.html', { root: 'build' });
+});
+
+app.get('/entregableZip', (req, res) => {
+  res.sendFile('index.html', { root: 'build' });
+});
+
+app.get('/entregableVideo', (req, res) => {
+  res.sendFile('index.html', { root: 'build' });
+});
+
+app.get('/calificar', (req, res) => {
+  res.sendFile('index.html', { root: 'build' });
+});
+
 
 const server = http.createServer(app);
 
@@ -141,6 +161,16 @@ function initial() {
         }
 
         console.log("added 'organizadorGlobal' to roles collection");
+      });
+
+      new Role({
+        name: "organizadorLocal"
+      }).save(err => {
+        if (err) {
+          console.log("error", err);
+        }
+
+        console.log("added 'organizadorLocal' to roles collection");
       });
 
     }
