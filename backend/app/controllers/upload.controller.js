@@ -24,8 +24,10 @@ exports.uploadLink = (req, res) => {
 
 exports.uploadGameZip = (req, res) => {
   const gameZip = new GameZip({
+    name: req.body.name,
     team: req.body.team,
     url: req.body.url,
+    state: req.body.state,
   });
 
   gameZip.save((err, game) => {

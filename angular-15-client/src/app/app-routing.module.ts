@@ -11,6 +11,7 @@ import { BoardJuezComponent } from './board-juez/board-juez.component';
 import { BoardUploadZipComponent } from './board-upload-zip/board-upload-zip.component';
 import { BoardTeamsComponent } from './board-teams/board-teams.component';
 import { BoardSolicitudSerOrganizadorComponent } from './board-solicitud-ser-organizador/board-solicitud-ser-organizador.component';
+import { BoardOrganizadorLocalComponent } from './board-organizadorlocal/board-organizadorlocal.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'participante', component: BoardParticipanteComponent },
   { path: 'uploadFile', component: BoardUploadZipComponent },
   { path: 'organizadorglobal', component: BoardOrganizadorGlobalComponent },
+  { path: 'organizadorlocal', component: BoardOrganizadorLocalComponent},
   { path: 'juez', component: BoardJuezComponent },
 
   { path: 'teams', component: BoardTeamsComponent },

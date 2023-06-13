@@ -1,0 +1,17 @@
+<div class="m-5 d-flex justify-content-center align-items-center">
+      <h2>Juegos</h2>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let juego of nombresJuegos"
+        >
+          {{ juego }}
+          <button class="btn btn-primary" (click)="onSelectStateAceptar(juego)">
+            Aceptar
+          </button>
+          <button class="btn btn-primary" (click)="onSelectStateRechazar(juego)">
+            Rechazar
+          </button>
+        </li>
+      </ul>
+    </div>

@@ -14,6 +14,7 @@ import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { BoardParticipanteComponent } from './board-participante/board-participante.component';
 import { BoardJuezComponent } from './board-juez/board-juez.component';
 import { BoardOrganizadorGlobalComponent } from './board-organizadorglobal/board-organizadorglobal.component';
+import { BoardOrganizadorLocalComponent } from './board-organizadorlocal/board-organizadorlocal.component';
 import { BoardUploadZipComponent } from './board-upload-zip/board-upload-zip.component';
 import { BoardTeamsComponent } from './board-teams/board-teams.component';
 import { BoardSolicitudSerOrganizadorComponent } from './board-solicitud-ser-organizador/board-solicitud-ser-organizador.component';
@@ -28,6 +29,7 @@ import { BoardSolicitudSerOrganizadorComponent } from './board-solicitud-ser-org
     BoardParticipanteComponent,
     BoardJuezComponent,
     BoardOrganizadorGlobalComponent,
+    BoardOrganizadorLocalComponent,
     BoardUploadZipComponent,
     BoardTeamsComponent,
     BoardSolicitudSerOrganizadorComponent

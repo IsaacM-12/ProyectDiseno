@@ -35,6 +35,10 @@ export class UserService {
     return this.http.get(API_URL + 'organizadorglobal', { responseType: 'text' });
   }
 
+  getOrganizadorlLocal(): Observable<any> {
+    return this.http.get(API_URL + 'organizadorlocal', { responseType: 'text' });
+  }
+
   getJuezBoard(): Observable<any> {
     return this.http.get(API_URL + 'juez', { responseType: 'text' });
   }
