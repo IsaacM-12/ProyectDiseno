@@ -36,7 +36,7 @@ export class BoardEntregableVideoComponent {
   viewEntregableVideo(): void {
     this.http.get<any[]>(AUTH_API + 'viewEntregableVideo').subscribe(
       (data) => {
-        this.nombresEquipos = data.map((equipo) => equipo.url);
+        this.nombresEquipos = data.map((equipo) => equipo.team);
       },
       (error) => {
         console.log(error);

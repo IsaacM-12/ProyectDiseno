@@ -25,7 +25,7 @@ exports.getZips = (req, res) => {
 };
 
 exports.getVideo = (req, res) => {
-  Video.find({}, 'url', (err, zips) => {
+  Video.find({}, 'team', (err, zips) => {
     if (err) {
       console.log(err);
       res.status(500).json({ message: 'Error al obtener los equipos' });
