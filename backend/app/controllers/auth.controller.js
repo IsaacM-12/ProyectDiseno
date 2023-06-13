@@ -104,6 +104,7 @@ exports.signin = (req, res) => {
         team: user.team,
         email: user.email,
         roles: authorities,
+        team: user.team,
       });
     });
 };

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
+import { StorageService } from '../_services/storage.service';
 
 @Component({
   selector: 'app-board-participante',
@@ -13,16 +14,23 @@ export class BoardParticipanteComponent implements OnInit {
   isSuccessful = false;
   errorMessage = '';
 
-  constructor(private authService: AuthService) {}
+  //el equipo del usuario
+  teamName: any;
+
+
+  constructor(
+    private authService: AuthService,
+    private storageService: StorageService
+  ) {}
 
   ngOnInit(): void {}
 
   onSubmit(): void {
     const { url } = this.form;
+    this.teamName = this.storageService.getUser().team;
 
-    this.authService.uploadLink(url).subscribe({
+    this.authService.uploadLink(url, this.teamName).subscribe({
       next: (data) => {
-        console.log(data);
         this.isSuccessful = true;
       },
       error: (err) => {
