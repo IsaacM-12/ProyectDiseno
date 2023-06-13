@@ -4,8 +4,10 @@ const mongoose = require("mongoose");
 const gameZip = mongoose.model(
   "GameZip",
   new mongoose.Schema({
+    name: String,
     team: String,
     url: String,
+    state: String,
   })
 );
 

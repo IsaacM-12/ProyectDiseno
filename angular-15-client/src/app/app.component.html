@@ -40,6 +40,14 @@
           >Dar permisos</a
         >
       </li>
+      <li class="nav-item" *ngIf="showOrganizadorLocalBoard">
+        <a
+          href="/organizadorlocal"
+          class="nav-link"
+          routerLink="organizadorlocal"
+          >Juegos</a
+        >
+      </li>
       <li class="nav-item" *ngIf="showJuezBoard">
         <a href="/juez" class="nav-link" routerLink="juez">Juez Board</a>
       </li>

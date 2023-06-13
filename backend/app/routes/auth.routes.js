@@ -43,4 +43,9 @@ module.exports = function (app) {
   app.put("/api/auth/changeUserTeam", controllerUpdate.updateParticipantTeam );
   
   app.put("/api/auth/changeCalificationTeam", controllerUpdate.updateCalificacion );
+  app.get("/api/auth/viewGames", controllerGet.getGames );
+
+  app.put("/api/auth/changeUserTeam", controllerUpdate.updateParticipantTeam );
+
+  app.put("/api/auth/changeGameState", controllerUpdate.updateGameState );
 };

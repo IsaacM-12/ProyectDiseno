@@ -16,6 +16,7 @@ export class AppComponent {
   showModeratorBoard = false;
   showParticipanteBoard = false;
   showOrganizadorGlobalBoard = false;
+  showOrganizadorLocalBoard = false;
   showJuezBoard = false;
   username?: string;
 
@@ -37,6 +38,9 @@ export class AppComponent {
       this.showParticipanteBoard = this.roles.includes('ROLE_PARTICIPANTE');
       this.showOrganizadorGlobalBoard = this.roles.includes(
         'ROLE_ORGANIZADORGLOBAL'
+      );
+      this.showOrganizadorLocalBoard = this.roles.includes(
+        'ROLE_ORGANIZADORLOCAL'
       );
       this.showJuezBoard = this.roles.includes('ROLE_JUEZ');
 

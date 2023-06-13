@@ -12,6 +12,17 @@
         novalidate
       >
         <div class="form-group">
+          <label for="name">Nombre del juego:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            [(ngModel)]="form.name"
+            required
+          />
+        </div>
+        
+        <div class="form-group">
           <label for="zip">Zip:</label>
           <input
             type="file"
@@ -27,8 +38,9 @@
       </form>
 
       <div class="alert alert-success" *ngIf="isSuccessful">
-        Upload successful!
+        ¡Subida exitosa!
       </div>
     </div>
   </div>
 </div>
+

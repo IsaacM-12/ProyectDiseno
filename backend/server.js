@@ -92,13 +92,13 @@ function initial() {
       });
 
       new Role({
-        name: "admin"
+        name: "organizadorLocal"
       }).save(err => {
         if (err) {
           console.log("error", err);
         }
 
-        console.log("added 'admin' to roles collection");
+        console.log("added 'Organizador Local' to roles collection");
       });
 
       new Role({

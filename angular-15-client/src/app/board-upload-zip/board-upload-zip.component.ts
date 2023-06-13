@@ -25,10 +25,12 @@ export class BoardUploadZipComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(): void {
+    const{ name } = this.form;
     const { url } = this.form;
     this.teamName = this.storageService.getUser().team;
+    const state: string = "Pendiente";
 
-    this.authService.uploadGameZip(this.teamName, url).subscribe({
+    this.authService.uploadGameZip(name,  this.teamName, url, state).subscribe({
       next: (data) => {
         console.log(data);
         this.isSuccessful = true;

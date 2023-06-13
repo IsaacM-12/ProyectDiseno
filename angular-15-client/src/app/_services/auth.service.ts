@@ -52,12 +52,14 @@ export class AuthService {
     );
   }
 
-  uploadGameZip(team: String, url: String): Observable<any> {
+  uploadGameZip(name: String, team: String, url: String, state: String): Observable<any> {
     return this.http.post(
       AUTH_API + 'uploadGameZip',
       {
+        name,
         team,
         url,
+        state,
       },
       httpOptions
     );

@@ -14,6 +14,7 @@ import { BoardSolicitudSerOrganizadorComponent } from './board-solicitud-ser-org
 import { BoardEntregableZipComponent } from './board-entregable-zip/board-entregable-zip.component';
 import { BoardEntregableVideoComponent } from './board-entregable-video/board-entregable-video.component';
 import { BoardCalificarComponent } from './board-calificar/board-calificar.component';
+import { BoardOrganizadorLocalComponent } from './board-organizadorlocal/board-organizadorlocal.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'participante', component: BoardParticipanteComponent },
   { path: 'uploadFile', component: BoardUploadZipComponent },
   { path: 'organizadorglobal', component: BoardOrganizadorGlobalComponent },
+  { path: 'organizadorlocal', component: BoardOrganizadorLocalComponent},
   { path: 'juez', component: BoardJuezComponent },
 
   { path: 'teams', component: BoardTeamsComponent },

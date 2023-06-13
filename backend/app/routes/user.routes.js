@@ -29,4 +29,10 @@ module.exports = function (app) {
     [authJwt.verifyToken, authJwt.isOrganizadorGlobal],
     controller.organizadorGlobalBoard
   );
+
+  app.get(
+    "/api/test/organizadorlocal",
+    [authJwt.verifyToken, authJwt.isOrganizadorLocal],
+    controller.organizadorLocalBoard
+  );
 };
