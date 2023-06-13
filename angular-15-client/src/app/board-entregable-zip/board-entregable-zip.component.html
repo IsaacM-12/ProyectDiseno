@@ -1,0 +1,25 @@
+<div class="fondo">
+    <a>ㅤ</a>
+    
+  
+    <div class="m-5">
+      <div *ngIf="!joinTeam">
+        <h2>Equipos que entregaron el archivo zip</h2>
+        <ul class="list-group">
+          <li
+            class="list-group-item list-group-item-info"
+            *ngFor="let equipo of nombresEquipos"
+          >
+            {{ equipo }}
+            
+          </li>
+        </ul>
+      </div>
+  
+      <div class="alert alert-success" *ngIf="joinTeam">
+        Te uniste al equipo
+      </div>
+  
+    </div>
+  </div>
+  

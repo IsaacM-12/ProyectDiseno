@@ -17,6 +17,10 @@ import { BoardOrganizadorGlobalComponent } from './board-organizadorglobal/board
 import { BoardUploadZipComponent } from './board-upload-zip/board-upload-zip.component';
 import { BoardTeamsComponent } from './board-teams/board-teams.component';
 import { BoardSolicitudSerOrganizadorComponent } from './board-solicitud-ser-organizador/board-solicitud-ser-organizador.component';
+import { BoardEntregableZipComponent } from './board-entregable-zip/board-entregable-zip.component';
+import { BoardEntregableVideoComponent } from './board-entregable-video/board-entregable-video.component';
+import { BoardCalificarComponent } from './board-calificar/board-calificar.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +34,10 @@ import { BoardSolicitudSerOrganizadorComponent } from './board-solicitud-ser-org
     BoardOrganizadorGlobalComponent,
     BoardUploadZipComponent,
     BoardTeamsComponent,
-    BoardSolicitudSerOrganizadorComponent
+    BoardSolicitudSerOrganizadorComponent,
+    BoardEntregableZipComponent,
+    BoardEntregableVideoComponent,
+    BoardCalificarComponent
   ],
   imports: [
     BrowserModule,

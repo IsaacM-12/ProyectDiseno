@@ -36,5 +36,11 @@ module.exports = function (app) {
 
   app.get("/api/auth/viewTeams", controllerGet.getTeams );
 
+  app.get("/api/auth/viewEntregableZip", controllerGet.getZips );
+
+  app.get("/api/auth/viewEntregableVideo", controllerGet.getVideo );
+
   app.put("/api/auth/changeUserTeam", controllerUpdate.updateParticipantTeam );
+  
+  app.put("/api/auth/changeCalificationTeam", controllerUpdate.updateCalificacion );
 };

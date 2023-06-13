@@ -46,17 +46,21 @@
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-select">
           <label for="place">Lugar:</label>
-          <input
-            type="text"
+          <select
             class="form-control"
             name="place"
             [(ngModel)]="form.place"
             required
             #place="ngModel"
             [ngClass]="{ 'is-invalid': f.submitted && place.errors }"
-          />
+          >
+            <option value="">Seleccionar</option>
+            <option value="Costa Rica">Costa Rica</option>
+            <option value="España">España</option>
+            <option value="Estados Unidos">Estados Unidos</option>
+          </select>
           <div *ngIf="place.errors && f.submitted" class="invalid-feedback">
             <div *ngIf="place.errors['required']">Place is required</div>
           </div>

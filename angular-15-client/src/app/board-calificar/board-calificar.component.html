@@ -1,0 +1,49 @@
+<div class="fondo">
+    <a>ㅤ</a>
+    
+  
+    <div class="m-5">
+      <div *ngIf="!joinTeam">
+        <h2>Equipos disponibles para calificar</h2>
+        <ul class="list-group">
+          <li
+            class="list-group-item list-group-item-info"
+            *ngFor="let equipo of nombresEquipos"
+            
+          >
+            {{ equipo.name }}
+            
+            <button class="stars" (click)="onSelectTeam(equipo.id, commentInput.value, 1)">
+                ⭐
+              </button>
+              
+              <button class="stars" (click)="onSelectTeam(equipo.id, commentInput.value, 2)">
+                ⭐⭐
+              </button>
+              
+              <button class="stars" (click)="onSelectTeam(equipo.id, commentInput.value, 3)">
+                ⭐⭐⭐
+              </button>
+              
+              <button class="stars" (click)="onSelectTeam(equipo.id, commentInput.value, 4)">
+                ⭐⭐⭐⭐
+              </button>
+              
+              <button class="stars" (click)="onSelectTeam(equipo.id, commentInput.value, 5)">
+                ⭐⭐⭐⭐⭐
+              </button>
+              
+              <textarea class="comment-input" #commentInput placeholder="Agregar comentario"></textarea>
+              
+              
+          </li>
+        </ul>
+      </div>
+  
+      <div class="alert alert-success" *ngIf="joinTeam">
+        Se agrego la calificacion
+      </div>
+  
+    </div>
+  </div>
+  

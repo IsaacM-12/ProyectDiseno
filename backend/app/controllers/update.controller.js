@@ -1,4 +1,5 @@
 const User = require("../models/user.model");
+const Team = require("../models/team.model");
 
 exports.updateParticipantTeam = (req, res) => {
 
@@ -10,6 +11,25 @@ exports.updateParticipantTeam = (req, res) => {
         .then((response) => {
             if (!response) {
                 return res.status(404).send({ message: "No se logró unir al equipo" });
+            }
+            res.send({ message: "Actualizado exitosamente", response: response });
+        })
+        .catch((err) => {
+            res.status(500).send({ message: err });
+        });
+};
+
+exports.updateCalificacion = (req, res) => {
+
+
+    Team.findOneAndUpdate(
+        { _id: req.body.id },
+        { $set: { comentario: req.body.comentario, calificacion: req.body.calificacion } },
+        { new: true, useFindAndModify: false }
+    )
+        .then((response) => {
+            if (!response) {
+                return res.status(404).send({ message: "No se logró calificar al equipo" });
             }
             res.send({ message: "Actualizado exitosamente", response: response });
         })
